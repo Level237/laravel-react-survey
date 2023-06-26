@@ -12,7 +12,7 @@ const StateContext=createContext({
 const tmpSurveys=[
   {
     "id": 1,
-    "image_url": "https:/api.yoursurveys.xyz/images/vJutXzn02CDwdOyh.png",
+    "image_url": "https://getthematic.com/insights/content/images/wordpress/2018/04/shutterstock_730381336.jpg",
     "title": "TheCodeholic YouTube channel",
     "slug": "thecodeholic-youtube-channel",
     "status": true,
@@ -153,7 +153,7 @@ const tmpSurveys=[
   },
   {
     "id": 2,
-    "image_url": "https:/api.yoursurveys.xyz/images/gjIHElz4aKrL0nT0.png",
+    "image_url": "https://assets.toptal.io/images?url=https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/1279225/regular_1708x683_0521-react-redux-and-immutablejs-Waldek_Newsletter-993b50f4ae56e9ee6e024a309c23a6c4.png",
     "title": "React",
     "slug": "react",
     "status": true,
@@ -165,7 +165,7 @@ const tmpSurveys=[
   },
   {
     "id": 3,
-    "image_url": "https:/api.yoursurveys.xyz/images/WPfzo0g66huUYYwR.png",
+    "image_url": "https://www.allotraining.com/wp-content/uploads/2022/02/laravel9-allotraining-750x458.png",
     "title": "Laravel 9",
     "slug": "laravel-9",
     "status": true,
