@@ -29,7 +29,7 @@ export default function Login() {
 
   }
   console.error(error)
-  console.log(error);
+
 })
 
     }

@@ -6,8 +6,8 @@ const axiosClient=axios.create({
 })
 console.log(import.meta.env.VITE_API_BASE_URL);
 axiosClient.interceptors.request.use((config)=>{
-  const token="123";// TODO
-  config.headers.Authorization =`Bearer ${token}`
+
+  config.headers.Authorization =`Bearer ${localStorage.getItem("TOKEN")}`
   return config;
 })
 axiosClient.interceptors.response.use(response=>{
