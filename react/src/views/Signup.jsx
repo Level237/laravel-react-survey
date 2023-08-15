@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axiosClient from "../axios.js";
+import {useStateContext} from "../contexts/ContextProvider.jsx";
 
 export default function Signup() {
 
+  const { setCurrentUser,setUserToken }=useStateContext();
   const [fullName,setFullName] =useState("");
   const [email,setEmail] =useState("");
   const [password,setPassword] =useState("");
@@ -24,7 +26,8 @@ export default function Signup() {
 
     })
     .then(({data})=>{
-      console.log(data);
+      setCurrentUser(data.user);
+      setUserToken(data.token);
     })
 .catch((error)=>{
   if(error.response){
@@ -65,6 +68,8 @@ export default function Signup() {
                   id="name"
                   name="name"
                   type="text"
+                  value={fullName}
+                  onChange={ev=>setFullName(ev.target.value)}
                   placeholder="Enter Your Name"
                   required
                   className="block w-full rounded-md border-0 p-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -81,6 +86,8 @@ export default function Signup() {
                   id="email"
                   name="email"
                   type="email"
+                  value={email}
+                  onChange={ev=>setEmail(ev.target.value)}
                   autoComplete="email"
                   placeholder="Email Adress"
                   required
@@ -105,6 +112,8 @@ export default function Signup() {
                   id="password"
                   name="password"
                   type="password"
+                  value={password}
+                  onChange={ev=>setPassword(ev.target.value)}
                   placeholder="PassWord"
                   autoComplete="current-password"
                   required
@@ -128,6 +137,8 @@ export default function Signup() {
                   id="password-confirmation"
                   name="password_confirmation"
                   type="password"
+                  value={passwordConfirmation}
+                  onChange={ev=>setPasswordConfirmation(ev.target.value)}
                   autoComplete="current-password"
                   required
                   placeholder="PassWord Confirmation"
