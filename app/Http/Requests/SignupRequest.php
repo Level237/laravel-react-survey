@@ -2,7 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Support\Facades\Password;
+
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SignupRequest extends FormRequest

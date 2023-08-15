@@ -27,6 +27,13 @@ export default function Signup() {
       console.log(data);
     })
 .catch((error)=>{
+  if(error.response){
+    const finalErrors=Object.values(error.response.data.errors).reduce((accum,next)=>[...next,...accum],[])
+    console.log(finalErrors);
+    setError({__html:finalErrors.join('<br>')});
+
+  }
+  console.error(error)
   console.log(error);
 })
 
@@ -46,6 +53,8 @@ export default function Signup() {
             Signup  For Free
           </h2>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+
+          {error.__html && (<div className="bg-red-500 rounded py-2 px-3 text-white" dangerouslySetInnerHTML={error}></div>)}
           <form onSubmit={onSubmit} className="space-y-6" action="#" method="POST">
           <div>
               <label htmlFor="Full Name" className="block text-sm font-medium leading-6 text-gray-900">
