@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('list',function(){
 
-Route::post('/signup',[AuthController::class,'signup']);
-Route::post('/login',[AuthController::class,'login']);
+    return 'level';
+});
+Route::post('signup',[AuthController::class,'signup']);
+Route::post('login',[AuthController::class,'login'])->middleware("cors");;

@@ -18,14 +18,17 @@ export default function Signup() {
       name:fullName,
       email,
       password,
-      password_confirmation:passwordConfirmation
+      password_confirmation:passwordConfirmation,
+      method:"POST",
+        mode: 'no-cors',
+
     })
     .then(({data})=>{
       console.log(data);
     })
-    .catch((error)=>{
-      console.log(error);
-    })
+.catch((error)=>{
+  console.log(error);
+})
 
     }
 

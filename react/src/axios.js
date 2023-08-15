@@ -4,7 +4,7 @@ import router from "./router";
 const axiosClient=axios.create({
   baseURL:`${import.meta.env.VITE_API_BASE_URL}/api`
 })
-console.log(import.meta.VITE_API_BASE_URL);
+console.log(import.meta.env.VITE_API_BASE_URL);
 axiosClient.interceptors.request.use((config)=>{
   const token="123";// TODO
   config.headers.Authorization =`Bearer ${token}`

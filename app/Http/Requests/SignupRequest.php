@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Password;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SignupRequest extends FormRequest
@@ -11,7 +12,7 @@ class SignupRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +22,10 @@ class SignupRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+       return [
+            'name'=>'required',
+            'email' =>'required|email|string|unique:users,email',
+            'password' => ['required', 'confirmed',Password::min(8)->mixedCase()->numbers()],
         ];
     }
 }
